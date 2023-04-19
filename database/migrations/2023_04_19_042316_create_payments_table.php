@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('member_id')->constrained('members');
-            $table->integer('amount');
-            $table->date('paid_at');
+            $table->foreignId('member_id')->constrained('members')->require;
+            $table->integer('amount')->require;
+            $table->date('paid_at')->require;
             $table->timestamps();
         });
     }

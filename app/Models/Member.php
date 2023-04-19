@@ -8,4 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class Member extends Model
 {
     use HasFactory;
+
+    protected $hidden = [
+        'created_at',
+        'updated_at',
+    ];
+
+    protected $visible = [
+        'id',
+        'name',
+        'gender',
+        'birth_date',
+        'banned',
+    ];
 }

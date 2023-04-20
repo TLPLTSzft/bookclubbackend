@@ -20,11 +20,4 @@ class Payment extends Model
         'created_at',
         'updated_at',
     ];
-
-    protected $visible = [
-        'id',
-        'member_id',
-        'amount',
-        'paid_at',
-    ];
 }

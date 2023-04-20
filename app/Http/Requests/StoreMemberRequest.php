@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdatePaymentRequest extends FormRequest
+class StoreMemberRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -21,8 +21,11 @@ class UpdatePaymentRequest extends FormRequest
      */
     public function rules(): array
     {
+        $gender = ['', 'm', 'f', 'M', 'F'];
         return [
-            //
+            'name' => 'required|string',
+            'gender' => 'nullable|in: ' . implode(',', $gender),
+            'birth_date' => 'required|date',
         ];
     }
 }

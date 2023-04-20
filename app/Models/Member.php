@@ -9,16 +9,14 @@ class Member extends Model
 {
     use HasFactory;
 
-    protected $hidden = [
-        'created_at',
-        'updated_at',
-    ];
-
-    protected $visible = [
-        'id',
+    protected $fillable = [
         'name',
         'gender',
         'birth_date',
+    ];
+
+    protected $hidden = [
+        'updated_at',
         'banned',
     ];
 }

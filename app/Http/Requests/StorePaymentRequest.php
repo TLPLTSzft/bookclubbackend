@@ -11,7 +11,7 @@ class StorePaymentRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,9 @@ class StorePaymentRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'member_id' => 'integer',
+            'amount' => 'integer',
+            'paid_at' => 'date',
         ];
     }
 }
